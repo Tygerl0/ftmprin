@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fantom Printer Presale</title>
+    <link rel="icon" type="image/x-icon" href="/images/mainlogo.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1/web3.min.js" integrity="sha512-5erpERW8MxcHDF7Xea9eBQPiRtxbse70pFcaHJuOhdEBQeAxGQjUwgJbuBDWve+xP/u5IoJbKjyJk50qCnMD7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+    <link rel="stylesheet" href="styles/buy.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="main-nav">
+            <input type="checkbox" id="check" />
+            <label for="check" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <a href="/" class="logo"><img src="images/mainlogo.png"></a>
+
+            <ul class="navlinks">
+                <!-- <li><a href="#" class="link">Buy</a></li>
+        <li><a href="usdc.html" class="link">USDC Rewards</a></li>
+        <li><a href="airdrop.html" class="link">Airdrop Rewards</a></li>
+        <li><a href="#" class="link">Chart</a></li> -->
+
+                <li><a href="https://twitter.com/RyvinNodes" class="link">Twitter</a></li>
+                <li><a href="https://discord.gg/ZWvNP4sKxW" class="link">Discord</a></li>
+                <li><a href="https://ryvinnodes.gitbook.io/" class="link">Docs</a></li>
+                <li><a class="contact" id="userBalance">0 AVAX</a></li>
+                <li><a class="contact" id="userAddress">Connect to Metamask</a></li>
+                <li>
+                    <a class="" id="logoutButton"></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="details">
+        <!-- <h2 id="wltext"></h2> -->
+        <h2>WL Presale : 6th April
+        </h2>
+        <p>We have raised <span id="raised">$0</span> during the private and the public Presale</p>
+        <p>For Private Presale: 1 $RYV = $0.5</p>
+        <p>For Public Presale: 1 $RYV = $1</p>
+        <p>Presale tokens will be vested for 2 days and will be unlocked linearly</p>
+
+        <a href="https://fantomprinter.gitbook.io">> See more explanation on our docs</a>
+        <div class="border"></div>
+        <div class="ccc">
+            <div>
+                <h3 id="mimRaisedsofar">LAUNCH ON 8-APR 8PM (UTC)</h3>
+            </div>
+            <div class="sign" style="margin-left:5vh ;">
+                <span class="fast-flicker" id="demo"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="cardtwo">
+        <div class="quantity">
+            <h2 style="margin-left: 27px ;">Private Presale </h2>
+            <!-- <h3>Your Balances : </h3> -->
+            <!-- <h5>$FTM Available: <span id="userBalance2" style="color:rgb(42, 231, 89);">NaN</span></h5> -->
+            <h5>$ contributed in WL Presale: <span id="claimable" style="color:rgb(42, 231, 89);">NaN</span></h5>
+            <h5>Percent of tokens unlocked <span id="prePercentReleased" style="color:rgb(42, 231, 89);">NaN</span></h5>
+
+
+            <!-- <h3>$MIM Available: <span id="mimBalance" style="color:rgb(42, 231, 89);">NaN</span></h3> -->
+            <!-- <h3>Buy RYV with MIM</h3> -->
+            <form>
+                <button class="btn" id="approvePreContract">Approve</button>
+                <button class="btn" id="claimFromPresale">Claim</button>
+            </form>
+
+        </div>
+        <div class="quantity2">
+            <h2 style="margin-left: 27px ;">Public Presale </h2>
+            <!-- <h3>Your Balances : </h3> -->
+            <!-- <h5>$FTM Available: <span id="userBalance2" style="color:rgb(42, 231, 89);">NaN</span></h5> -->
+            <h5>$MIM contributed in Public Presale: <span id="claimable2" style="color:rgb(42, 231, 89);">NaN</span></h5>
+            <h5>Percent of tokens unlocked <span id="prePercentReleased2" style="color:rgb(42, 231, 89);">NaN</span></h5>
+
+            <!-- <h3>$MIM Available: <span id="mimBalance" style="color:rgb(42, 231, 89);">NaN</span></h3> -->
+            <!-- <h3>Buy RYV with MIM</h3> -->
+            <form>
+                <button class="btn" id="approvePubContract">Approve</button>
+                <button class="btn" id="claimFromPubsale">Claim</button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="swap">
+        <div class="bal">
+            <h3> <span style="color:rgb(42, 231, 89);">MIGRATE pRYV TO RYV</span></h2>
+                <h4>p Available: <span id="pRYVavailable" style="color:rgb(42, 231, 89);">NaN</span></h3>
+            <h4>RYV Available: <span id="RYVavailable" style="color:rgb(42, 231, 89);">NaN</span></h3>
+        </div>
+        <button class="btn" id="approveTwoContracts">Approve</button>
+        <button class="btn" id="migrateToRYVBtn">Migrate</button>
+        <button class="btn" id="recieveRYVbtn">Recieve</button>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="time.js" type="text/javascript"></script>
+</body>
+
+</html>
